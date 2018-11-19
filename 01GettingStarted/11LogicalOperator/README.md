@@ -32,3 +32,46 @@ For instance, a number 1 is treated as true, a number 0 as false:
 if (1 || 0) { // works just like if( true || false )
   alert( 'Hello!' );
 }
+```
+Given multiple OR'ed values:  
+
+```js
+result = value1 || value2 || value3;
+```
+
+The OR || operator does the following:  
+
+  * Evaluate operands from left to right.  
+  * For each operand, convert it to boolean. If the result is true, then stop and return the original value of that operand.  
+  * If all other operands have been assessed (i.e. all were false), return the last operand.  
+
+A value is returned in its original form, without the conversion.  
+
+In other words, a chain of OR "||" returns the first truthy value or the last one if no such value is found.  
+
+```js
+alert( 1 || 0 ); // 1 (1 is truthy)
+alert( true || 'no matter what' ); // (true is truthy)
+
+alert( null || 1 ); // 1 (1 is the first truthy value)
+alert( null || 0 || 1 ); // 1 (the first truthy value)
+alert( undefined || null || 0 ); // 0 (all falsy, returns the last value)
+```  
+
+So, the above feature can be used for many purpose such as :  
+  * **Getting the first truthy value from the list of variables or expressions.**
+
+  Imagine we have several variables, which can either contain the data or be null/undefined. And we need to choose the first one with data.  
+  
+  We can use OR || for that.  
+
+  * **Short-circuit evaluation.**  
+
+  Operands can be not only values, but arbitrary expressions. OR evaluates and tests them from left to right. The evaluation stops when a truthy value is reached, and the value is returned. The process is called "a short-circuit evaluation", because it goes as short as possible from left to right.  
+
+  ```js
+  let x;
+  *!*true*/!* || (x = 1);
+  alert(x); // undefined, because (x = 1) not evaluated
+  ```
+
