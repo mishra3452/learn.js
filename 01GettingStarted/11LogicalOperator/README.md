@@ -73,5 +73,39 @@ So, the above feature can be used for many purpose such as :
   let x;
   *!*true*/!* || (x = 1);
   alert(x); // undefined, because (x = 1) not evaluated
-  ```
+  ```  
 
+### && (AND)  
+
+The AND operator is represented with two ampersands &&:  
+
+```js
+result = a && b;
+```  
+
+In classical programming AND returns true if both operands are truthy and false otherwise:  
+
+```js
+alert( true && true );   // true
+alert( false && true );  // false
+alert( true && false );  // false
+alert( false && false ); // false
+```  
+
+Just as for OR, any value is allowed as an operand of AND:  
+
+```js
+if (1 && 0) { // evaluated as true && false
+  alert( "won't work, because the result is falsy" );
+}
+```  
+
+The AND && operator does the following:  
+
+  * Evaluate operands from left to right.  
+  * For each operand, convert it to a boolean. If the result is false, stop and return the original value of that operand.  
+  * If all other operands have been assessed (i.e. all were truthy), return the last operand.  
+
+In other words, AND returns the first falsy value or the last value if none were found.
+
+The rules above are similar to OR. The difference is that AND returns the first falsy value while OR returns the first truthy one.
