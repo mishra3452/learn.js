@@ -57,4 +57,27 @@ do {
 } while (condition);
 ```  
 
-The loop will first execute the body, then check the condition and, while it's truthy, execute it again and again.
+The loop will first execute the body, then check the condition and, while it's truthy, execute it again and again.  
+
+### The "for" loop  
+
+Mostly used loop.  
+
+Syntax :  
+```js
+for (begin; condition; step) {
+  // ... loop body ...
+}
+```  
+For example :  
+```js
+for (let i = 0; i < 3; i++) { // shows 0, then 1, then 2
+  console.log(i);
+}
+```  
+
+Steps involved in above example :  
+  * **begin** 	    i = 0 	        Executes once upon entering the loop.  
+  * **condition** 	i < 3 	        Checked before every loop iteration, if fails the loop stops.
+  * **step** 	    i++ 	        Executes after the body on each iteration, but before the condition check.  
+  * **body** 	    console.log(i) 	Runs again and again while the condition is truthy
