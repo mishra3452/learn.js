@@ -45,3 +45,16 @@ If the loop body has a single statement, we can omit the brackets `{…}`:
 let i = 3;
 while (i) console.log(i--);
 ```  
+
+### The "do..while" loop  
+
+In many cases we want certain conditions to be executed atleat once (if it is false then also). In that case we use do..while loop.  
+
+The condition check can be moved below the loop body using the *do..while* syntax:  
+```js
+do {
+  // loop body
+} while (condition);
+```  
+
+The loop will first execute the body, then check the condition and, while it's truthy, execute it again and again.
