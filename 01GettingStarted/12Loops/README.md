@@ -80,4 +80,58 @@ Steps involved in above example :
   * **begin** 	    i = 0 	        Executes once upon entering the loop.  
   * **condition** 	i < 3 	        Checked before every loop iteration, if fails the loop stops.
   * **step** 	    i++ 	        Executes after the body on each iteration, but before the condition check.  
-  * **body** 	    console.log(i) 	Runs again and again while the condition is truthy
+  * **body** 	    console.log(i) 	Runs again and again while the condition is truthy  
+
+**NOTE :** Some part of the for loop can be Omitted.  
+
+Look at few examples :  
+
+```js
+// NO BEGIN
+let i = 0; // we have i already declared and assigned
+
+for (; i < 3; i++) { // no need for "begin"
+  console.log( i ); // 0, 1, 2
+}
+
+
+//NO BEGIN AND STEP
+let i = 0;
+
+for (; i < 3;) {
+  console.log( i++ );
+}
+```  
+
+### Break    
+
+Normally the loop exits when the condition becomes falsy.  
+
+But we can force the exit at any moment. There's a special break directive for that.  
+
+```js
+let i = 0;
+for(;i < 3; i++){
+    if(i == 2){
+        break;
+    }
+    console.log(i); // 0 1 as when i == 2 you will some out of the for loop. 
+}
+```  
+
+### Continue  
+
+The continue directive is a "lighter version" of break. It doesn't stop the whole loop. Instead it stops the current iteration and forces the loop to start a new one (if the condition allows).  
+
+We can use it if we're done on the current iteration and would like to move on to the next.  
+
+The loop below uses continue to output only odd values:  
+```js
+for (let i = 0; i < 10; i++) {
+
+  // if true, skip the remaining part of the body
+  *!*if (i % 2 == 0) continue;*/!*
+
+  console.log(i); // 1, then 3, 5, 7, 9
+}
+```
