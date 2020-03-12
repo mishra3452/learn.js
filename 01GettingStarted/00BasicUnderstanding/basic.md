@@ -47,4 +47,4 @@ As time goes on, the program becomes more and more complex. It becomes necessary
 
   * Multiple line comment in js :  
 
-  use "/*" to start commenting and "*/" to end commenting.  
+  use "/* " to start commenting and " */" to end commenting.  
